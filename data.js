@@ -29,5 +29,15 @@ contacts = [
         companyName: "Chloe Associates",
         phone: "4112 232 089",
         email: "zandra.the.chandra@gmail.com"
+    },
+    {
+        id: 4,
+        image:
+            "https://avataaars.io/?avatarStyle=Transparent&topType=LongHairStraight&accessoriesType=Prescription02&hairColor=BrownDark&facialHairType=Blank&clotheType=ShirtCrewNeck&clotheColor=Gray01&eyeType=Default&eyebrowType=RaisedExcitedNatural&mouthType=ScreamOpen&skinColor=Tanned",
+        firstName: "Phill",
+        lastName: "Sammy",
+        companyName: "Phill's Pots",
+        phone: "4123 83 10",
+        email: "potsrus@gmail.com"
     }
 ];

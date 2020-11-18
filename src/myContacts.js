@@ -4,12 +4,30 @@ emailIconD = "M26.6623488,24.8877168 L18.6851446,19.0567597 L17.3035985,20.09882
 
 
 window.onload = () => {
+    loadContacts(contacts)
+};
+
+const searchContacts = () => {
+    let searchInput = document.getElementById("search");
+    let filteredList = contacts.filter(contact => contactMatchesSearch(contact, searchInput.value));
+
+    removeAllContacts();
+    loadContacts(filteredList);
+};
+
+
+const loadContacts = contactsToDisplay => {
     const contactList = document.getElementById("contacts");
 
-    contacts.forEach(contactData => {
+    contactsToDisplay.forEach(contactData => {
         const contact = generateContact(contactData);
         contactList.appendChild(contact);
     })
+};
+
+const removeAllContacts = () => {
+    const contactList = document.getElementById("contacts");
+    contactList.innerHTML = "";
 };
 
 
@@ -118,6 +136,12 @@ const generateIcon = d => {
     svg.appendChild(path);
 
     return svg
+};
+
+const contactMatchesSearch = (contact, search) => {
+    search = search.toLowerCase();
+
+    return contact.lastName.toLowerCase().startsWith(search) || contact.firstName.toLowerCase().startsWith(search)
 };
 
 
