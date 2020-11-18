@@ -1,4 +1,5 @@
 contacts = [
+
     {
         id: 1,
         image:

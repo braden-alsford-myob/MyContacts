@@ -4,14 +4,11 @@ body {
     padding: 2rem;
 }
 
-.line {
-    margin-bottom: 2rem;
-}
-
 .searchContainer {
     background-color: white;
     padding: 1rem;
     border-radius: 0.5rem;
+    margin-top: 2rem;
     margin-bottom: 1rem;
 }
 
@@ -26,11 +23,14 @@ body {
     width: 6rem;
 }
 
+.link {
+    margin-left: 0.5rem;
+    margin-right: 0.8rem;
+}
+
 .icon {
-    aria-hidden: true;
     width: 32px;
     height: 32px;
-    viewBox: 0 0 32 32;
 }
 
 .company {
@@ -45,18 +45,8 @@ body {
     margin-bottom: 1rem;
 }
 
-.contactDetails {
-    display: flex;
-    flex-direction: column;
-
-}
-
 .links-web {
     align-items: center;
-}
-
-.links-mobile {
-    display: inline;
 }
 
 .icon-container-mobile {
@@ -71,6 +61,10 @@ body {
 
 .horizontal-container {
     display: flex;
+}
+
+.contactList {
+    padding-left: 0;
 }
 
 /* Web */
@@ -91,22 +85,38 @@ body {
 /* Mobile */
 @media (max-width:750px) {
 
+    .titleContainer {
+        display: flex;
+        justify-content: center;
+        color: white;
+        background-color: #823a80;
+    }
+
+    .title {
+        margin: 1rem;
+    }
+
+    .line {
+        display: none;
+    }
+
     .searchInput {
-        width: 100%;
+        width: 98%;
     }
 
     .contactList {
-        display: flex;
-        flex-wrap: wrap;
+        column-count: 2;
     }
 
     .contact {
         flex-direction: column;
         align-items: center;
-        width: 50%;
+        break-inside: avoid-column;
     }
 
     .contactDetails {
+        display: flex;
+        flex-direction: column;
         align-items: center;
     }
 
