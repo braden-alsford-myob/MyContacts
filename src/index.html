@@ -1,18 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>My Contacts</title>
+        <script src="myContacts.js"></script>
+        <script src="../data.js"></script>
+        <link rel="stylesheet" href="styles.css">
+    </head>
 
-<script src="myContacts.js"></script>
-<link rel="stylesheet" href="styles.css">
+    <body id="body">
+        <div class="title-container">
+            <h1 class="title">My contacts</h1>
+        </div>
 
-<head>
-    <meta charset="UTF-8">
-    <title>My Contacts</title>
-    <div>
-        <h1>My Contacts</h1>
-    </div>
+        <hr class="line">
 
-</head>
-<body id="body">
+        <div class="search-container">
+            <p>Search</p>
+            <label>
+                <input id="search" class="search-input" onkeyup="searchContacts()">
+            </label>
+        </div>
 
-</body>
+        <ul id="contacts" class="contact-list">
+
+        </ul>
+
+    </body>
 </html>
