@@ -1,0 +1,90 @@
+.avatar {
+    background-color: lightskyblue;
+    border-radius: 50%;
+    height: 6rem;
+    width: 6rem;
+}
+
+.anchor {
+    margin-left: 0.5rem;
+    margin-right: 0.8rem;
+}
+
+.icon {
+    width: 32px;
+    height: 32px;
+}
+
+.company {
+    color: grey;
+}
+
+.contact {
+    display: flex;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.anchors-web {
+    align-items: center;
+}
+
+.icon-container-mobile {
+    display: flex;
+    width: 6rem;
+    background-color: #ededed;
+    border-radius: 0.5rem;
+    justify-content: center;
+    margin: 0.5rem;
+    padding: 0.2rem;
+}
+
+.horizontal-container {
+    display: flex;
+}
+
+/* Web */
+@media (min-width: 751px) {
+    .links-mobile {
+        display: none;
+    }
+
+    .anchors-web {
+        display: flex;
+    }
+
+    .avatar {
+        margin-right: 1rem;
+    }
+}
+
+/* Mobile */
+@media (max-width:750px) {
+
+    .name {
+        margin-top: 0.8rem;
+    }
+
+    .contact {
+        flex-direction: column;
+        align-items: center;
+        break-inside: avoid-column;
+    }
+
+    .contact-details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .links-mobile {
+        display: flex;
+    }
+
+    .anchors-web {
+        display: none;
+    }
+
+}
