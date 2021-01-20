@@ -1,25 +1,25 @@
 import './App.css';
 import React, {useState} from 'react';
-import Contacts from "./Contacts.js";
-import {data} from "./data";
+import Body from "./Body.js";
+import { TreatProvider } from 'react-treat';
+import theme from './theme.treat.js';
 
 const App = () => {
 
-    const [contacts, setContacts] = useState(data);
+    const [currentTheme, setCurrentTheme] = useState(theme.light);
 
-    const addContact = contact => {
-        setContacts(contacts.concat(contact));
+    const changeTheme = () => {
+        if (currentTheme === theme.light) {
+            setCurrentTheme(theme.dark)
+        } else {
+            setCurrentTheme(theme.light)
+        }
     };
 
     return (
-        <div className="App">
-        <body className="body">
-          <Contacts
-              contacts={contacts}
-              addContact={addContact}
-          />
-        </body>
-        </div>
+        <TreatProvider theme={currentTheme}>
+            <Body onThemeChange={changeTheme} />
+        </TreatProvider>
     );
 };
 

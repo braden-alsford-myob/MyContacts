@@ -1,11 +1,14 @@
-import './Contacts.css';
 import React, {useEffect, useState} from 'react';
 import Contact from "./Contact.js";
 import Form from "./Form";
 import PropTypes from "prop-types";
+import {useStyles} from "react-treat";
+import * as styleRefs from "./Contacts.treat";
 
 
 const Contacts = (props) => {
+
+    const styles = useStyles(styleRefs);
 
     const [adding, setAdding] = useState(false);
     const [filteredContacts, setFilteredContacts] = useState(props.contacts);
@@ -37,16 +40,16 @@ const Contacts = (props) => {
 
     const header = (
         <div>
-            <div className="title-container">
-                <h1 className="title">My contacts</h1>
-                <div className="button-container">
+            <div className={styles.titleContainer}>
+                <h1 className={styles.title}>My contacts</h1>
+                <div className={styles.buttonContainer}>
                     <button onClick={onButtonPressed}
                             className="add"
                             >{buttonText}</button>
                 </div>
             </div>
 
-            <hr className="line"/>
+            <hr className={styles.line}/>
         </div>
     );
 
@@ -76,11 +79,11 @@ const Contacts = (props) => {
         return (
             <div>
                 {header}
-                <div className="search-container">
+                <div className={styles.searchContainer}>
                     <p>Search</p>
-                    <input onChange={search} className="search-input"/>
+                    <input onChange={search} className={styles.searchInput}/>
                 </div>
-                <div className="contact-list">
+                <div className={styles.contactList}>
                     {content}
                 </div>
             </div>
