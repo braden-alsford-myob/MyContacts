@@ -15,6 +15,8 @@ export const input = style(theme => ({
     boxSizing: 'border-box',
     height: '2rem',
     marginTop: '0.4rem',
+    backgroundColor: theme.inputBackground,
+    color: theme.primaryTextColor,
 }));
 
 export const label = style(theme => ({

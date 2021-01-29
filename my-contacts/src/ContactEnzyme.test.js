@@ -35,11 +35,3 @@ describe('Contact details displayed in web view', () => {
         expect(children.length).toEqual(1);
     });
 });
-
-// describe ('hrefs are set up correctly', () => {
-//
-//     it('should have mobile hrefs', () => {
-//         expect(contact.find('[mobilePhoneAnchor]').href.toEqual('12345'));
-//     })
-//
-// });
