@@ -8,6 +8,5 @@ module.exports = function (config, env) {
             themeIdentName:'__[name]-[local]_[hash:base64:4]'
         }),
     ].concat(config.plugins);
-    console.log(config.plugins);
     return config;
 };
