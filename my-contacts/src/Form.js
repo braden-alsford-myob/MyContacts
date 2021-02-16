@@ -7,49 +7,43 @@ const Form = (props) =>
  {
      const styles = useStyles(styleRefs);
 
-     const [image, setImage] = useState("");
-     const [firstName, setFirstName] = useState("");
-     const [lastName, setLastName] = useState("");
-     const [companyName, setCompanyName] = useState("");
-     const [phoneNumber, setPhoneNumber] = useState("");
-     const [email, setEmail] = useState("");
+     const [contact, setContact] = useState({
+         image: '',
+         firstName: '',
+         lastName: '',
+         companyName: '',
+         phone: '',
+         email: '',
+     });
 
-     const submit = () => {
-         let newContact = {
-             image: image,
-             firstName: firstName,
-             lastName: lastName,
-             companyName: companyName,
-             phone: phoneNumber,
-             email: email
-         };
 
-         props.addContact(newContact);
-     };
+     const updateContact = (e) => setContact({...contact, [e.target.name]: e.target.value});
+
+     const submit = () => props.addContact(contact);
 
     return (
         <div className={styles.container}>
             <label className={styles.label}>Image
-                <input type='image' className={styles.input} value={image} onChange={e => setImage(e.target.value)}/>
+                <input name="image" className={styles.input} value={contact.image} onChange={e => updateContact(e)}/>
             </label>
             <label className={styles.label}>First name
-                <input className={styles.input} value={firstName} onChange={e => setFirstName(e.target.value)} />
+                <input name="firstName" className={styles.input} value={contact.firstName} onChange={e => updateContact(e)} />
             </label>
 
             <label className={styles.label}>Last name
-                <input className={styles.input} value={lastName} onChange={e => setLastName(e.target.value)}/>
+                <input name="lastName" className={styles.input} value={contact.lastName} onChange={e => updateContact(e)}/>
             </label>
 
             <label className={styles.label}>Company name
-                <input className={styles.input} value={companyName} onChange={e => setCompanyName(e.target.value)}/>
+                <input name="companyName" className={styles.input} value={contact.companyName} onChange={e => updateContact(e)}/>
             </label>
 
             <label className={styles.label}>Phone number
-                <input className={styles.input} value={phoneNumber} onChange={e => setPhoneNumber(e.target.value)}/>
+                <input name="phone" className={styles.input} value={contact.phone} onChange={e => updateContact(e)}/>
             </label>
 
             <label className={styles.label}>Email
-                <input className={styles.input} value={email} onChange={e => setEmail(e.target.value)}/>
+                <input name="email" className={styles.input} value={contact.email} onChange={e => updateContact(e)}/>
             </label>
 
             <button onClick={submit} className={styles.saveButton}>Save</button>

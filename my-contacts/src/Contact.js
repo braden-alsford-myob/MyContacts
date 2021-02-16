@@ -16,7 +16,7 @@ const Contact = (props) => {
     let emailHref = "mailto:" + props.email;
 
     return (
-        <li className={styles.contact}>
+        <div className={styles.contact}>
             <img alt="profile" className={styles.avatar}
                  src={props.image}/>
 
@@ -45,7 +45,7 @@ const Contact = (props) => {
                 </div>
 
             </div>
-        </li>
+        </div>
     )
 };
 

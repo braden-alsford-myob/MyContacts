@@ -5,6 +5,7 @@ export const body = style(theme => ({
     backgroundColor: theme.bodyColor,
     fontFamily: 'sans-serif',
     height: '100vh',
+    boxSizing: 'border-box'
 }));
 
 export const button = style({
