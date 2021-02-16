@@ -1,8 +1,11 @@
 import { style } from 'treat';
 
+const mobileBreakPoint = 750;
+const mobileMaxWidthMediaQuery = `(max-width: ${mobileBreakPoint}px)`;
+
 export const titleContainer = style((theme => ({
     '@media': {
-        '(max-width: 750px)': {
+        [`${mobileMaxWidthMediaQuery}`]: {
             justifyContent: 'center',
             alignItems: 'center',
             color: 'white',
@@ -26,7 +29,7 @@ export const searchContainer = style( theme => ({
 
 export const searchInput = style ( theme => ({
     '@media': {
-        '(max-width: 750px)': {
+        [`${mobileMaxWidthMediaQuery}`]: {
             width: '98%',
         }
     },
@@ -37,7 +40,7 @@ export const searchInput = style ( theme => ({
 
 export const title = style (theme => ({
     '@media': {
-        '(max-width: 750px)': {
+        [`${mobileMaxWidthMediaQuery}`]: {
             margin: '1rem',
             color: 'white',
         }
@@ -48,8 +51,11 @@ export const title = style (theme => ({
 
 export const contactList = style ({
     '@media': {
-        '(max-width: 750px)': {
+        [`${mobileMaxWidthMediaQuery}`]: {
             columnCount: 2,
+        },
+        ['(max-width: 600px)']: {
+            columnCount: 1,
         }
     },
     paddingLeft: 0,
@@ -57,7 +63,7 @@ export const contactList = style ({
 
 export const line = style ({
     '@media': {
-        '(max-width: 750px)': {
+        [`${mobileMaxWidthMediaQuery}`]: {
             display: 'none'
         }
     },
@@ -65,7 +71,7 @@ export const line = style ({
 
 export const buttonContainer = style ({
     '@media': {
-        '(max-width: 750px)': {
+        [`${mobileMaxWidthMediaQuery}`]: {
             justifyContent: 'flex-end',
         }
     },

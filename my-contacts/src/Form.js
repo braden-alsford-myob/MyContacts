@@ -30,7 +30,7 @@ const Form = (props) =>
     return (
         <div className={styles.container}>
             <label className={styles.label}>Image
-                <input className={styles.input} value={image} onChange={e => setImage(e.target.value)}/>
+                <input type='image' className={styles.input} value={image} onChange={e => setImage(e.target.value)}/>
             </label>
             <label className={styles.label}>First name
                 <input className={styles.input} value={firstName} onChange={e => setFirstName(e.target.value)} />

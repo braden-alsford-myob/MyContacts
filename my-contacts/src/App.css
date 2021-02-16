@@ -1,10 +1,4 @@
 body {
-  font-family: sans-serif;
   overscroll-behavior-x: none;
   overscroll-behavior-y: none;
-  height: 100%;
-}
-
-html {
-  height: 100%;
 }

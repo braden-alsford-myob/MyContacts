@@ -1,11 +1,14 @@
 import { style } from 'treat';
 
+const mobileBreakPoint = 750;
+const mobileMaxWidthMediaQuery = `(max-width: ${mobileBreakPoint}px)`;
+const mobileMinWidthMediaQuery = `(min-width: ${mobileBreakPoint + 1}px)`;
+
 export const contact = style((theme => ({
     '@media': {
-        '(max-width: 750px)': {
+        [`${mobileMaxWidthMediaQuery}`]: {
             flexDirection: 'column',
             alignItems: 'center',
-            breakInside: 'avoid-column',
         }
     },
     display: 'flex',
@@ -18,7 +21,7 @@ export const contact = style((theme => ({
 
 export const contactDetails = style({
     '@media': {
-        '(max-width: 750px)': {
+        [`${mobileMaxWidthMediaQuery}`]: {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
@@ -28,7 +31,7 @@ export const contactDetails = style({
 
 export const name = style({
     '@media': {
-        '(max-width: 750px)': {
+        [`${mobileMaxWidthMediaQuery}`]: {
             marginTop: '0.8rem',
         }
     },
@@ -36,12 +39,6 @@ export const name = style({
 
 export const company = style(theme => ({
     color: theme.secondaryTextColor,
-}));
-
-export const icon = style(theme => ({
-    fill: theme.primaryTextColor,
-    width: 32,
-    height: 32,
 }));
 
 export const anchor = style(theme => ({
@@ -62,7 +59,7 @@ export const anchorContainerMobile = style( theme => ({
 
 export const avatar = style({
     '@media': {
-        '(min-width: 751px)': {
+        [`${mobileMinWidthMediaQuery}`]: {
             marginRight: '1rem',
         },
     },
@@ -77,10 +74,10 @@ export const avatar = style({
 
 export const anchorsWeb = style({
     '@media': {
-        '(max-width: 750px)': {
+        [`${mobileMaxWidthMediaQuery}`]: {
             display: 'none'
         },
-        '(min-width: 751px)': {
+        [`${mobileMinWidthMediaQuery}`]: {
             display: 'flex'
         },
     },
@@ -90,10 +87,10 @@ export const anchorsWeb = style({
 export const mobileAnchorContainer = style( {
     display: 'flex',
     '@media': {
-        '(max-width: 750px)': {
+        [`${mobileMaxWidthMediaQuery}`]: {
             display: 'flex'
         },
-        '(min-width: 751px)': {
+        [`${mobileMinWidthMediaQuery}`]: {
             display: 'none'
         },
     },

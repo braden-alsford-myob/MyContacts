@@ -39,7 +39,7 @@ const Contacts = (props) => {
     const buttonText = adding ? "Cancel" : "Add";
 
     const header = (
-        <div>
+        <header>
             <div className={styles.titleContainer}>
                 <h1 className={styles.title}>My contacts</h1>
                 <div className={styles.buttonContainer}>
@@ -50,34 +50,36 @@ const Contacts = (props) => {
             </div>
 
             <hr className={styles.line}/>
-        </div>
+        </header>
     );
-
-    const content = filteredContacts.map(contact => {
-        return (
-            <Contact
-                image={contact.image}
-                firstName={contact.firstName}
-                lastName={contact.lastName}
-                company={contact.companyName}
-                phone={contact.phone}
-                email={contact.email}
-            />
-        )
-    });
 
     if (adding) {
         return (
-            <div>
+            <main>
                 {header}
                 <Form
                 addContact={contactCreated}/>
-            </div>
+            </main>
 
         )
     } else {
+
+        const content = filteredContacts.map(contact => {
+            return (
+                <Contact
+                    key={contact.firstName}
+                    image={contact.image}
+                    firstName={contact.firstName}
+                    lastName={contact.lastName}
+                    company={contact.companyName}
+                    phone={contact.phone}
+                    email={contact.email}
+                />
+            )
+        });
+
         return (
-            <div>
+            <main>
                 {header}
                 <div className={styles.searchContainer}>
                     <p>Search</p>
@@ -86,7 +88,7 @@ const Contacts = (props) => {
                 <div className={styles.contactList}>
                     {content}
                 </div>
-            </div>
+            </main>
         )
     }
 };

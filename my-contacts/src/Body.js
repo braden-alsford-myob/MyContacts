@@ -15,13 +15,13 @@ const Body = (props) => {
     };
 
     return (
-        <div className={styles.body}>
+        <body className={styles.body}>
             <button onClick={props.onThemeChange} className={styles.button}>Switch Theme!</button>
             <Contacts
                 contacts={contacts}
                 addContact={addContact}
             />
-        </div>
+        </body>
     )
 
 };
