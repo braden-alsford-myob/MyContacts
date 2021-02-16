@@ -44,7 +44,6 @@ const Contacts = (props) => {
                 <h1 className={styles.title}>My contacts</h1>
                 <div className={styles.buttonContainer}>
                     <button onClick={onButtonPressed}
-                            className="add"
                             >{buttonText}</button>
                 </div>
             </div>
